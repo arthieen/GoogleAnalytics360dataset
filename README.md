@@ -4,7 +4,6 @@ Google Analytics sample dataset for BigQuery
 -- Query 01: calculate total visit, pageview, transaction and revenue for Jan, Feb and March 2017 order by month
 #standardSQL
 SELECT FORMAT_DATE("%Y%m",parse_DATE("%Y%m%d", date)) as month
---  ,count(visitId)
   ,sum( totals.visits) as visits
   ,sum(totals.pageviews ) as pageviews
   ,sum(totals.transactions ) as transactions
